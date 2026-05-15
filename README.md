@@ -123,7 +123,7 @@ The areas in the depth map where the value is 0 are usually invalid regions caus
 Please refer to `distance.py`.
 
 ```html
-Quickly train the model by referencing the data in the link: 
+Quickly train the model by referencing the data in the link: https://pan.baidu.com/s/1bRHnlXS6u-MmMJl_1AmZwA 提取码: 36a3
 Alternatively, you can obtain resources from our published datasets：https://www.scidb.cn/detail?dataSetId=c303b6269e3e43f087bec4e87735a42e
 If you are interested in the methods we used in processing multimodal datasets, please contact us via email.
 ```
