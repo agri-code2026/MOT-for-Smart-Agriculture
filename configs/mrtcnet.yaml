@@ -1,0 +1,85 @@
+# Model configuration for MRTC-Net
+# =====================================
+# Matches the experimental settings reported in the paper.
+
+model:
+  embed_dim      : 256       # feature embedding dimension (RT-DETR-L scale)
+  num_classes    : 4         # unripe / semi_mature / mature / stem
+  num_plants     : 210       # plant IDs in GH-Tomato-MOTC dataset
+  num_queries    : 300       # initial detection queries
+  num_dec_layers : 6         # UCL-Decoder transformer layers
+  max_depth_m    : 0.75      # effective harvesting depth range (meters)
+  tau_low        : 0.3       # uncertainty threshold → stable tracking
+  tau_high       : 0.7       # uncertainty threshold → lost / removed
+
+dgm_encoder:
+  num_heads      : 8
+  num_layers     : 1         # single encoder layer (plug-and-play)
+  mlp_ratio      : 4.0
+  dropout        : 0.0
+
+ucl_decoder:
+  num_heads      : 8
+  num_layers     : 6
+  mlp_ratio      : 4.0
+  dropout        : 0.0
+
+gcs_head:
+  with_confidence: true      # depth confidence estimation branch
+  geo_weight     : 0.5       # weight of geometric constraint loss
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Training
+# ─────────────────────────────────────────────────────────────────────────────
+train:
+  epochs         : 100
+  batch_size     : 8
+  img_size       : 640        # 640x640 input (RT-DETR-L standard)
+  optimizer      : AdamW
+  lr             : 1.0e-4
+  weight_decay   : 1.0e-4
+  lr_scheduler   : cosine
+  warmup_epochs  : 3
+  amp            : true       # automatic mixed precision
+
+loss_weights:
+  det_cls        : 1.0
+  det_box        : 5.0
+  depth          : 1.0
+  track          : 1.0
+  plant          : 1.0
+  geo            : 0.5
+  uncertainty    : 0.1
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Dataset – GH-Tomato-MOTC
+# ─────────────────────────────────────────────────────────────────────────────
+dataset:
+  name           : GH-Tomato-MOTC
+  num_classes    : 4
+  class_names    : [unripe, semi_mature, mature, stem]
+  class_colors   :
+    unripe       : [0,   200,   0]    # green
+    semi_mature  : [0,   165, 255]    # orange
+    mature       : [0,     0, 255]    # red
+    stem         : [255, 255,   0]    # cyan
+  max_depth_mm   : 3000
+  near_depth_m   : 0.75
+  # Expected directory layout:
+  #   {root}/images/{split}/*.jpg
+  #   {root}/depths/{split}/*-d1.png   (16-bit, aligned to RGB)
+  #   {root}/labels/{split}/*.txt      (extended YOLO format)
+  splits:
+    train        : {images: 12600, bboxes: 151200, tracks: 5000,  plants: 150}
+    val          : {images: 2700,  bboxes: 35825,  tracks: 1210,  plants: 30}
+    test         : {images: 2700,  bboxes: 32175,  tracks: 1157,  plants: 30}
+    total        : {images: 18000, bboxes: 219200, tracks: 7367,  plants: 210}
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Inference
+# ─────────────────────────────────────────────────────────────────────────────
+inference:
+  conf_threshold : 0.3
+  sim_threshold  : 0.7       # cosine similarity threshold for tracker
+  max_track_age  : 30        # frames before a lost track is removed
+  near_depth_m   : 0.75      # proximal fruit threshold for yield estimation
