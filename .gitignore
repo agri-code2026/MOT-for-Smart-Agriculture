@@ -32,3 +32,6 @@ depth_viz/
 # OS
 .DS_Store
 Thumbs.db
+datasets/*.zip
+yes
+yes.pub
