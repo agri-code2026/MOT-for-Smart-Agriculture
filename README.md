@@ -34,7 +34,7 @@ MRTC-Net is an end-to-end multimodal framework for **real-time tomato tracking, 
 |----------|-----|
 | NVIDIA RTX 3060 | 46.7 |
 | Jetson AGX Orin | 31.5 |
-| Jetson Orin NX | 24.9 |
+| Jetson Orin NX | 28.7 |
 
 ---
 
