@@ -74,8 +74,8 @@ class RTDETRBackbone(nn.Module):
                 nn.BatchNorm2d(embed_dim), nn.ReLU(inplace=True),
             )
             self._use_stub = True
-        else:
-            self._use_stub = False if pretrained_path else True
+        # else:
+        self._use_stub = False if pretrained_path else True
 
     def _load_rtdetr(self, path: str):
         """Load RT-DETR-L backbone weights from ultralytics checkpoint."""

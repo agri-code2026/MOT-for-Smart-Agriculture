@@ -263,7 +263,7 @@ Geometric constraint loss guides fruit–stem association using:
   title   = {MRTC-Net: A Multi-modal Real-time Tracking and Counting Network 
              for Tomato Yield Estimation in Greenhouse},
   author  = {Xuanjingwei, et al.},
-  journal = {Artificial Intelligence in Agriculture},
+  journal = {Computers and Electronics in Agriculture},
   year    = {2026}
 }
 ```
