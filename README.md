@@ -138,8 +138,8 @@ If you are interested in the methods we used in processing multimodal datasets, 
 python scripts/train.py \
     --data /path/to/GH-Tomato-MOTC \
     --pretrained /path/to/rtdetr-l.pt \
-    --epochs 100 \
-    --batch 8 \
+    --epochs 200 \
+    --batch 16 \
     --amp
 ```
 
@@ -263,7 +263,7 @@ Geometric constraint loss guides fruit–stem association using:
   title   = {MRTC-Net: A Multi-modal Real-time Tracking and Counting Network 
              for Tomato Yield Estimation in Greenhouse},
   author  = {Xuanjingwei, et al.},
-  journal = {Computers and Electronics in Agriculture},
+  journal = {},
   year    = {2026}
 }
 ```
