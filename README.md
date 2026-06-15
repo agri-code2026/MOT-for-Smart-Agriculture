@@ -9,7 +9,7 @@
 
 ## Overview
 
-MRTC-Net is an end-to-end multimodal framework for **real-time tomato tracking, fruit–plant association, and plant-level yield estimation** under complex greenhouse environments. It builds upon RT-DETR-L and introduces three novel modules:
+MRTC-Net is an end-to-end multimodal framework for **real-time tomato tracking, fruit–plant association, and plant-level yield estimation** under complex greenhouse environments. 
 
 | Module | Role |
 |--------|------|
