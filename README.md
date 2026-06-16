@@ -3,7 +3,7 @@
 **MRTC-Net: A Multi-modal Real-time Tracking and Counting Network for Tomato Yield Estimation in Greenhouse**
 
 > This repository contains the official code for the paper:  
-> *"MRTC-Net: A Multi-modal Real-time Tracking and Counting Network for Tomato Yield Estimation in Greenhouse"*
+> *"Geometry-Constrained Closed-Loop Multimodal Network for Plant-Level Tomato Yield Estimation in Dense Greenhouses"*
 
 ---
 
@@ -260,9 +260,8 @@ Geometric constraint loss guides fruit–stem association using:
 
 ```bibtex
 @article{mrtcnet2025,
-  title   = {MRTC-Net: A Multi-modal Real-time Tracking and Counting Network 
-             for Tomato Yield Estimation in Greenhouse},
-  author  = {Xuanjingwei, et al.},
+  title   = {},
+  author  = {},
   journal = {},
   year    = {2026}
 }
@@ -272,6 +271,6 @@ Geometric constraint loss guides fruit–stem association using:
 
 ## Contact
 
-If you have any problems, please contact us by email: **xuanjingwei@stu.ahua.edu.cn**
+If you have any problems, please contact us by email: ****
 
-*Anhui Agricultural University, School of Electronics and Electrical Engineering*
+**
