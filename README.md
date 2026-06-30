@@ -3,7 +3,7 @@
 **MRTC-Net: A Multi-modal Real-time Tracking and Counting Network for Tomato Yield Estimation in Greenhouse**
 
 > This repository contains the official code for the paper:  
-> *"Geometry-Constrained Closed-Loop Multimodal Network for Plant-Level Tomato Yield Estimation in Dense Greenhouses"*
+> *"Uncertainty-Guided Multimodal Tracking Network for Plant-Level Yield Estimation in Dense Tomato Greenhouses"*
 
 ---
 
@@ -27,6 +27,16 @@ MRTC-Net is an end-to-end multimodal framework for **real-time tomato tracking, 
 | IDS ↓ | **3** | 9 |
 | MAE ↓ | **3.1** | 4.3 (↓28%) |
 | RMSE ↓ | **4.91** | 6.4 (↓29%) |
+
+### Example of Videos
+
+**video1**
+
+
+
+**video2**
+
+
 
 **Real-time performance:**
 
