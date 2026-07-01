@@ -4,12 +4,11 @@ GH-Tomato-MOTC Dataset Utilities
 Paper §2.1 – Data Preparation
 
 Dataset statistics (Table 1 in paper):
-    Split       Images    BBoxes     Tracks   Plant IDs   Avg/frame
-    Train       12600     151200     5000     150         12.0
-    Val          2700      35825     1210      30         13.3
-    Test         2700      32175     1157      30         11.9
-    Total       18000     219200     7367     210         12.2
-
+| Split | Images | BBoxes | Tracks | Plant IDs | Avg/frame |
+|-------|--------|--------|--------|-----------|-----------|
+| Train | 14400 | 173840 | 5889 | 167 | 12.1 |
+| Val | 1800 | 23940 | 752 | 22 | 13.3 |
+| Test | 1800 | 21420 | 726 | 21 | 11.9 |
 Label format (YOLO-style extended):
     class_id  cx  cy  w  h  track_id  plant_id
     (all values normalized to [0,1] except integer IDs)
